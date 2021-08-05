@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display a map on a webpage</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoic3htODIwMTEwIiwiYSI6ImNrbmpucTUxazAwNzkydm83ZjF1d281a2YifQ.fRfy82n6BYwO-ffQ4I7dTA';
+var map = new mapboxgl.Map({
+container: 'map', // container ID
+style: 'mapbox://styles/sxm820110/ckrhtwl251mnr17nn40a3ro9o', // style URL
+center: [104.063782,30.575303], // starting position [lng, lat]
+zoom: 8 // starting zoom
+});
+  // Add geolocate control to the map.
+map.addControl(
+new mapboxgl.GeolocateControl({
+positionOptions: {
+enableHighAccuracy: true
+},
+trackUserLocation: true
+})
+);
+</script>
+</body>
+</html>
